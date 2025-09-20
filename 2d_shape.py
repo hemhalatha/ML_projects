@@ -4,8 +4,9 @@ import numpy as np
 
 frame = cv2.imread("C:\\Users\\Hemhalatha V R\\drone\\images\\test_pic.jpg")
 
-gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-blur = cv2.GaussianBlur(gray, (5, 5), 0)
+blur = cv2.GaussianBlur(frame, (5, 5), 0)
+gray = cv2.cvtColor(blur, cv2.COLOR_BGR2GRAY)
+
 edges = cv2.Canny(blur, 50, 150)
 
 # Find contours
